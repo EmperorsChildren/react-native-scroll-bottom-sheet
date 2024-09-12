@@ -1,6 +1,6 @@
 {
   "name": "@emperorschildren/react-native-scroll-bottom-sheet",
-  "version": "4.19.0",
+  "version": "4.20.0",
   "description": "Cross platform scrollable bottom sheet with virtualization support, running at 60 FPS and fully implemented in JS land",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
@@ -28,7 +28,10 @@
     "cross-platform",
     "60FPS"
   ],
-  "repository": "https://github.com/EmperorsChildren/react-native-scroll-bottom-sheet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmperorsChildren/react-native-scroll-bottom-sheet.git"
+  },
   "author": "MasterSigmar (https://github.com/MasterSigmar)",
   "license": "MIT",
   "bugs": {
