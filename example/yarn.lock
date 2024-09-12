@@ -53,7 +53,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.13.16, @babel/core@npm:^7.20.0, @babel/core@npm:^7.8.6":
+"@babel/core@npm:^7.13.16, @babel/core@npm:^7.20.0, @babel/core@npm:^7.25.2, @babel/core@npm:^7.8.6":
   version: 7.25.2
   resolution: "@babel/core@npm:7.25.2"
   dependencies:
@@ -1111,7 +1111,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@callstack/react-theme-provider@npm:^3.0.5":
+"@callstack/react-theme-provider@npm:^3.0.9":
   version: 3.0.9
   resolution: "@callstack/react-theme-provider@npm:3.0.9"
   dependencies:
@@ -1129,6 +1129,22 @@ __metadata:
   dependencies:
     "@types/hammerjs": "npm:^2.0.36"
   checksum: 10c0/dbedc15a0e633f887c08394bd636faf6a3abd05726dc0909a0e01209d5860a752d9eca5e512da623aecfabe665f49f1d035de3103eb2f9022c5cea692f9cc9be
+  languageName: node
+  linkType: hard
+
+"@emperorschildren/react-native-scroll-bottom-sheet@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@emperorschildren/react-native-scroll-bottom-sheet@npm:2.0.0"
+  dependencies:
+    "@babel/core": "npm:^7.25.2"
+    metro-react-native-babel-preset: "npm:^0.77.0"
+    utility-types: "npm:^3.10.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-gesture-handler: ">=2.0.0"
+    react-native-reanimated: ">=2.0.0"
+  checksum: 10c0/1102855a1915866182bc14b74bbca6dfd83ff608cdbc0921671dcc23a5366555f7fde7761304747bc2d49c91a9f2099af3bc8f2165349c7fbe2c34de9692d7ce
   languageName: node
   linkType: hard
 
@@ -4826,13 +4842,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^2.3.1":
-  version: 2.5.5
-  resolution: "hoist-non-react-statics@npm:2.5.5"
-  checksum: 10c0/79c204446a61ad490cc9342b2deeedea5a17f03a5fc091f367b6c08f29387c8d5578634ebfb8733043422a5e1182b372893d63f8737ac4b75da3a2ec4a316162
-  languageName: node
-  linkType: hard
-
 "hoist-non-react-statics@npm:^3.3.0":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
@@ -6156,6 +6165,55 @@ __metadata:
   languageName: node
   linkType: hard
 
+"metro-react-native-babel-preset@npm:^0.77.0":
+  version: 0.77.0
+  resolution: "metro-react-native-babel-preset@npm:0.77.0"
+  dependencies:
+    "@babel/core": "npm:^7.20.0"
+    "@babel/plugin-proposal-async-generator-functions": "npm:^7.0.0"
+    "@babel/plugin-proposal-class-properties": "npm:^7.18.0"
+    "@babel/plugin-proposal-export-default-from": "npm:^7.0.0"
+    "@babel/plugin-proposal-nullish-coalescing-operator": "npm:^7.18.0"
+    "@babel/plugin-proposal-numeric-separator": "npm:^7.0.0"
+    "@babel/plugin-proposal-object-rest-spread": "npm:^7.20.0"
+    "@babel/plugin-proposal-optional-catch-binding": "npm:^7.0.0"
+    "@babel/plugin-proposal-optional-chaining": "npm:^7.20.0"
+    "@babel/plugin-syntax-dynamic-import": "npm:^7.8.0"
+    "@babel/plugin-syntax-export-default-from": "npm:^7.0.0"
+    "@babel/plugin-syntax-flow": "npm:^7.18.0"
+    "@babel/plugin-syntax-nullish-coalescing-operator": "npm:^7.0.0"
+    "@babel/plugin-syntax-optional-chaining": "npm:^7.0.0"
+    "@babel/plugin-transform-arrow-functions": "npm:^7.0.0"
+    "@babel/plugin-transform-async-to-generator": "npm:^7.20.0"
+    "@babel/plugin-transform-block-scoping": "npm:^7.0.0"
+    "@babel/plugin-transform-classes": "npm:^7.0.0"
+    "@babel/plugin-transform-computed-properties": "npm:^7.0.0"
+    "@babel/plugin-transform-destructuring": "npm:^7.20.0"
+    "@babel/plugin-transform-flow-strip-types": "npm:^7.20.0"
+    "@babel/plugin-transform-function-name": "npm:^7.0.0"
+    "@babel/plugin-transform-literals": "npm:^7.0.0"
+    "@babel/plugin-transform-modules-commonjs": "npm:^7.0.0"
+    "@babel/plugin-transform-named-capturing-groups-regex": "npm:^7.0.0"
+    "@babel/plugin-transform-parameters": "npm:^7.0.0"
+    "@babel/plugin-transform-react-display-name": "npm:^7.0.0"
+    "@babel/plugin-transform-react-jsx": "npm:^7.0.0"
+    "@babel/plugin-transform-react-jsx-self": "npm:^7.0.0"
+    "@babel/plugin-transform-react-jsx-source": "npm:^7.0.0"
+    "@babel/plugin-transform-runtime": "npm:^7.0.0"
+    "@babel/plugin-transform-shorthand-properties": "npm:^7.0.0"
+    "@babel/plugin-transform-spread": "npm:^7.0.0"
+    "@babel/plugin-transform-sticky-regex": "npm:^7.0.0"
+    "@babel/plugin-transform-typescript": "npm:^7.5.0"
+    "@babel/plugin-transform-unicode-regex": "npm:^7.0.0"
+    "@babel/template": "npm:^7.0.0"
+    babel-plugin-transform-flow-enums: "npm:^0.0.2"
+    react-refresh: "npm:^0.4.0"
+  peerDependencies:
+    "@babel/core": "*"
+  checksum: 10c0/15ca33ab308e3eca15bf162cbdf24ea93362656550ea8127cd9950b3e9572902029e9cfcef7c2da70587c208eae48f9696f1f721760ae91b2ca580525e211949
+  languageName: node
+  linkType: hard
+
 "metro-resolver@npm:0.80.12":
   version: 0.80.12
   resolution: "metro-resolver@npm:0.80.12"
@@ -7440,18 +7498,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-paper@npm:^3.10.1":
-  version: 3.12.0
-  resolution: "react-native-paper@npm:3.12.0"
+"react-native-paper@npm:^5.12.5":
+  version: 5.12.5
+  resolution: "react-native-paper@npm:5.12.5"
   dependencies:
-    "@callstack/react-theme-provider": "npm:^3.0.5"
+    "@callstack/react-theme-provider": "npm:^3.0.9"
     color: "npm:^3.1.2"
-    react-native-safe-area-view: "npm:^0.14.9"
+    use-latest-callback: "npm:^0.1.5"
   peerDependencies:
     react: "*"
     react-native: "*"
+    react-native-safe-area-context: "*"
     react-native-vector-icons: "*"
-  checksum: 10c0/e459233c8e06b7eac40cd2eabf8134dd24d987f0d72d34416dfc1cfe88d7c51a4ff536858d5545c0de8d99429da4c411552a5db93c8e95424eb5e529b2be2f23
+  checksum: 10c0/feeeedae6fcd9684be04a8a9e9f568776d1680efa190cf0594d72fd91724985bbef2847e06e474ee6221dd1e236701e69c28f1e47f41cc0be8c99656ecf3f58c
   languageName: node
   linkType: hard
 
@@ -7485,18 +7544,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-safe-area-view@npm:^0.14.9":
-  version: 0.14.9
-  resolution: "react-native-safe-area-view@npm:0.14.9"
-  dependencies:
-    hoist-non-react-statics: "npm:^2.3.1"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 10c0/0f962682398b9784fbd29bf2c8c26d50f22642bf57dd115ce1a2c2480756b4db79781f9dfaeb14be4d8fa86131dd95ee97e46b85858011faa6f58719bde16bb2
-  languageName: node
-  linkType: hard
-
 "react-native-screens@npm:3.31.1":
   version: 3.31.1
   resolution: "react-native-screens@npm:3.31.1"
@@ -7507,20 +7554,6 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10c0/899a02751ecbc6231ce3c869268fb510e5b53428c788135ae46f4bbd768efe78bf74f17fec5becc4c4c1e81a5f224a907dc890ba2406181ff9e21830dda95dec
-  languageName: node
-  linkType: hard
-
-"react-native-scroll-bottom-sheet@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "react-native-scroll-bottom-sheet@npm:0.7.0"
-  dependencies:
-    utility-types: "npm:^3.10.0"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-    react-native-gesture-handler: "*"
-    react-native-reanimated: "*"
-  checksum: 10c0/e5e99beac16f064811d645cceb9d18b4b6955f34118f46b6f0beb1925ae546a2397416f512b2d7247d2b70e00b2cddc7048db771b9306c9418afe4315d91cdb2
   languageName: node
   linkType: hard
 
@@ -7615,6 +7648,13 @@ __metadata:
   version: 0.14.2
   resolution: "react-refresh@npm:0.14.2"
   checksum: 10c0/875b72ef56b147a131e33f2abd6ec059d1989854b3ff438898e4f9310bfcc73acff709445b7ba843318a953cb9424bcc2c05af2b3d80011cee28f25aef3e2ebb
+  languageName: node
+  linkType: hard
+
+"react-refresh@npm:^0.4.0":
+  version: 0.4.3
+  resolution: "react-refresh@npm:0.4.3"
+  checksum: 10c0/2b4e4b14b54bfbdfdd6d1c16b8476151b3e61083387061d4e5923b0342c678f6d0f23705835c3a04ab151bd92551d437395da3fb52ea7461a408f457d11ac6fa
   languageName: node
   linkType: hard
 
@@ -7916,6 +7956,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@babel/core": "npm:^7.8.6"
+    "@emperorschildren/react-native-scroll-bottom-sheet": "npm:^2.0.0"
     "@react-native-community/masked-view": "npm:^0.1.11"
     "@react-navigation/native": "npm:^5.3.2"
     "@react-navigation/stack": "npm:^5.3.5"
@@ -7932,11 +7973,10 @@ __metadata:
     react-native-credit-card: "npm:^0.1.9"
     react-native-gesture-handler: "npm:~2.16.1"
     react-native-maps: "npm:1.14.0"
-    react-native-paper: "npm:^3.10.1"
+    react-native-paper: "npm:^5.12.5"
     react-native-reanimated: "npm:~3.10.1"
     react-native-safe-area-context: "npm:4.10.5"
     react-native-screens: "npm:3.31.1"
-    react-native-scroll-bottom-sheet: "npm:^0.7.0"
     react-native-vector-icons: "npm:^10.1.0"
     react-native-web: "npm:~0.19.10"
     typescript: "npm:~5.3.3"
@@ -9148,6 +9188,15 @@ __metadata:
   version: 4.0.0
   resolution: "url-join@npm:4.0.0"
   checksum: 10c0/1aa466cfa128adab76dc9e559b38e2171df51e6105b5773382c3726e5a29971da013e4f9f5c36f1414ef1e5f1af535cfaf29611b53b0d2fc4f311f7b41199d13
+  languageName: node
+  linkType: hard
+
+"use-latest-callback@npm:^0.1.5":
+  version: 0.1.11
+  resolution: "use-latest-callback@npm:0.1.11"
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 10c0/8361ccd3e121552173a27fad67bd226e0cc8acf377073357a7ce83f516be3993b57111eb0e5a8748932543ff6bf4d202200de6e8ba6fa78ae111f44d05404128
   languageName: node
   linkType: hard
 

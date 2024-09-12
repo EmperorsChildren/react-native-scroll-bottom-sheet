@@ -10,6 +10,7 @@ import * as React from 'react';
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 
 interface Props {
+  children?: React.ReactNode;
   style?: StyleProp<ViewStyle>;
 }
 

@@ -10,19 +10,17 @@ import React from 'react';
 import Constants from 'expo-constants';
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import { Dimensions, Platform, StyleSheet, Text, View } from 'react-native';
-import { Colors, ProgressBar } from 'react-native-paper';
-import ScrollBottomSheet from 'react-native-scroll-bottom-sheet';
+import { ProgressBar } from 'react-native-paper';
+import ScrollBottomSheet from '@emperorschildren/react-native-scroll-bottom-sheet';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { HomeStackParamsList } from '../App';
 import { createMockData, ListItemData } from '../utils';
 import Handle from '../components/Handle';
 import Transaction from '../components/Transaction';
 import Animated, {
-  concat,
   Easing,
-  Extrapolate,
+  Extrapolation as Extrapolate,
   interpolate,
-  Value,
 } from 'react-native-reanimated';
 
 interface Props {
@@ -37,31 +35,34 @@ const sections = createMockData();
 
 const SectionListExample: React.FC<Props> = () => {
   const snapPointsFromTop = [96, '45%', windowHeight - 264];
-  const animatedPosition = React.useRef(new Value(0.5));
-  const handleLeftRotate = concat(
-    interpolate(animatedPosition.current, {
-      inputRange: [0, 0.4, 1],
-      outputRange: [25, 0, 0],
-      extrapolate: Extrapolate.CLAMP,
-    }),
-    'deg'
+  const animatedPosition = React.useRef(0.5);
+  const handleLeftRotate = [
+    interpolate(
+      animatedPosition.current,
+      [0, 0.4, 1],
+      [25, 0, 0],
+      Extrapolate.CLAMP
+    ),
+    'deg',
+  ];
+  const handleRightRotate = [
+    interpolate(
+      animatedPosition.current,
+      [0, 0.4, 1],
+      [-25, 0, 0],
+      Extrapolate.CLAMP
+    ),
+    'deg',
+  ];
+  const cardScale = interpolate(
+    animatedPosition.current,
+    [0, 0.6, 1],
+    [1, 1, 0.9],
+    Extrapolate.CLAMP
   );
-  const handleRightRotate = concat(
-    interpolate(animatedPosition.current, {
-      inputRange: [0, 0.4, 1],
-      outputRange: [-25, 0, 0],
-      extrapolate: Extrapolate.CLAMP,
-    }),
-    'deg'
-  );
-  const cardScale = interpolate(animatedPosition.current, {
-    inputRange: [0, 0.6, 1],
-    outputRange: [1, 1, 0.9],
-    extrapolate: Extrapolate.CLAMP,
-  });
 
   const renderSectionHeader = React.useCallback(
-    ({ section }) => (
+    ({ section }: any) => (
       <View style={styles.section}>
         <Text>{section.title}</Text>
       </View>
@@ -70,7 +71,7 @@ const SectionListExample: React.FC<Props> = () => {
   );
 
   const renderItem = React.useCallback(
-    ({ item }) => <Transaction {...item} />,
+    ({ item }: any) => <Transaction {...item} />,
     []
   );
 
@@ -83,7 +84,7 @@ const SectionListExample: React.FC<Props> = () => {
       <ProgressBar
         style={styles.progressBar}
         progress={0.8}
-        color={Colors.green600}
+        color={'#43a047'}
       />
       <Animated.Image
         source={require('../assets/card-front.png')}
@@ -104,7 +105,7 @@ const SectionListExample: React.FC<Props> = () => {
         </View>
         <View>
           <View style={styles.action}>
-            <Ionicons name="md-snow" size={24} color="black" />
+            <Ionicons name="snow" size={24} color="black" />
           </View>
           <Text style={{ textAlign: 'center' }}>Freeze</Text>
         </View>
@@ -132,8 +133,8 @@ const SectionListExample: React.FC<Props> = () => {
               style={[
                 styles.handle,
                 {
-                  left: windowWidth / 2 - 20,
-                  transform: [{ rotate: handleLeftRotate }],
+                  // left: windowWidth / 2 - 20,
+                  // transform: [{ rotate: handleLeftRotate }],
                 },
               ]}
             />
@@ -141,8 +142,8 @@ const SectionListExample: React.FC<Props> = () => {
               style={[
                 styles.handle,
                 {
-                  right: windowWidth / 2 - 20,
-                  transform: [{ rotate: handleRightRotate }],
+                  // right: windowWidth / 2 - 20,
+                  // transform: [{ rotate: handleRightRotate }],
                 },
               ]}
             />

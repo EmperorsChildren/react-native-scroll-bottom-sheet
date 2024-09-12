@@ -10,13 +10,12 @@ import * as React from 'react';
 import { Dimensions, Platform, StyleSheet, View } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { HomeStackParamsList } from '../App';
-import ScrollBottomSheet from 'react-native-scroll-bottom-sheet';
+import ScrollBottomSheet from '@emperorschildren/react-native-scroll-bottom-sheet';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import MapView from 'react-native-maps';
 import Animated, {
-  Extrapolate,
+  Extrapolation as Extrapolate,
   interpolate,
-  Value,
 } from 'react-native-reanimated';
 import Handle from '../components/Handle';
 import Carousel from '../components/Carousel';
@@ -41,15 +40,16 @@ const snapPointsFromTop = [96, '50%', windowHeight - 128];
 const HorizontalFlatListExample: React.FC<Props> = ({ navigation }) => {
   const bottomSheetRef = React.useRef<ScrollBottomSheet<any> | null>(null);
 
-  const animatedPosition = React.useRef(new Value(0));
-  const opacity = interpolate(animatedPosition.current, {
-    inputRange: [0, 1],
-    outputRange: [0, 0.75],
-    extrapolate: Extrapolate.CLAMP,
-  });
+  const animatedPosition = React.useRef(0);
+  const opacity = interpolate(
+    animatedPosition.current,
+    [0, 1],
+    [0, 0.75],
+    Extrapolate.CLAMP
+  );
 
   const renderRow = React.useCallback(
-    ({ index }) => <Carousel index={index} />,
+    ({ index }: any) => <Carousel index={index} />,
     []
   );
 
@@ -81,7 +81,7 @@ const HorizontalFlatListExample: React.FC<Props> = ({ navigation }) => {
             style={styles.icon}
           />
         </TouchableRipple>
-        {Platform.OS === 'ios' && (
+        {/* {Platform.OS === 'ios' && (
           <TouchableRipple
             style={[styles.iconContainer, { left: 16 }]}
             onPress={() => {
@@ -96,7 +96,7 @@ const HorizontalFlatListExample: React.FC<Props> = ({ navigation }) => {
               style={styles.icon}
             />
           </TouchableRipple>
-        )}
+        )} */}
       </View>
       <ScrollBottomSheet<string>
         ref={bottomSheetRef}
