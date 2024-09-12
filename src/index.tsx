@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2020 Raul Gomez Acuna
+ * Copyright (c) 2024 MasterSigmar
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -20,53 +20,41 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import {
+  State as GestureState,
+  NativeViewGestureHandler,
+  PanGestureHandler,
+  PanGestureHandlerProperties,
+  TapGestureHandler,
+} from 'react-native-gesture-handler';
 import Animated, {
+  Clock,
+  EasingNode as Easing,
+  Extrapolate,
+  Value,
   abs,
   add,
   and,
   call,
-  Clock,
   clockRunning,
   cond,
-  Easing as EasingDeprecated,
-  // @ts-ignore: this property is only present in Reanimated 2
-  EasingNode,
   eq,
   event,
-  Extrapolate,
   greaterOrEq,
   greaterThan,
+  interpolateNode as interpolate,
   multiply,
   not,
   onChange,
   or,
   set,
+  spring,
   startClock,
   stopClock,
   sub,
-  spring,
   timing,
-  Value,
 } from 'react-native-reanimated';
-import {
-  NativeViewGestureHandler,
-  PanGestureHandler,
-  PanGestureHandlerProperties,
-  State as GestureState,
-  TapGestureHandler,
-} from 'react-native-gesture-handler';
 import { Assign } from 'utility-types';
-
-const {
-  interpolate: interpolateDeprecated,
-  // @ts-ignore: this property is only present in Reanimated 2
-  interpolateNode,
-} = Animated;
-
-const interpolate: typeof interpolateDeprecated =
-  interpolateNode ?? interpolateDeprecated;
-
-const Easing: typeof EasingDeprecated = EasingNode ?? EasingDeprecated;
 
 const FlatListComponentType = 'FlatList' as const;
 const ScrollViewComponentType = 'ScrollView' as const;
@@ -329,10 +317,18 @@ export class ScrollBottomSheet<T extends any> extends Component<Props<T>> {
     });
     this.decelerationRate = new Value(initialDecelerationRate);
 
-    const handleGestureState = new Value<GestureState>(-1);
-    const handleOldGestureState = new Value<GestureState>(-1);
-    const drawerGestureState = new Value<GestureState>(-1);
-    const drawerOldGestureState = new Value<GestureState>(-1);
+    const handleGestureState = new Value<GestureState>(
+      GestureState.UNDETERMINED
+    );
+    const handleOldGestureState = new Value<GestureState>(
+      GestureState.UNDETERMINED
+    );
+    const drawerGestureState = new Value<GestureState>(
+      GestureState.UNDETERMINED
+    );
+    const drawerOldGestureState = new Value<GestureState>(
+      GestureState.UNDETERMINED
+    );
 
     const lastSnapInRange = new Value(1);
     this.prevTranslateYOffset = new Value(initialSnap);
@@ -774,9 +770,8 @@ export class ScrollBottomSheet<T extends any> extends Component<Props<T>> {
                 call([], () => {
                   // This prevents the scroll glide from happening on Android when pulling down with inertia.
                   // It's not perfect, but does the job for now
-                  const { method, args } = imperativeScrollOptions[
-                    this.props.componentType
-                  ];
+                  const { method, args } =
+                    imperativeScrollOptions[this.props.componentType];
                   // @ts-ignore
                   const node = this.props.innerRef.current?.getNode();
 

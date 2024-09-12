@@ -1,6 +1,6 @@
 {
-  "name": "react-native-scroll-bottom-sheet",
-  "version": "0.7.0",
+  "name": "@emperorschildren/react-native-scroll-bottom-sheet",
+  "version": "4.20.69",
   "description": "Cross platform scrollable bottom sheet with virtualization support, running at 60 FPS and fully implemented in JS land",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
@@ -15,7 +15,7 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "prepare": "bob build",
-    "release": "release-it",
+    "release": "release-it --no-increment",
     "example": "yarn --cwd example"
   },
   "keywords": [
@@ -28,41 +28,45 @@
     "cross-platform",
     "60FPS"
   ],
-  "repository": "https://github.com/rgommezz/react-native-scroll-bottom-sheet",
-  "author": "Raul Gomez Acuña <hello@raulgomez.io> (https://github.com/rgommezz)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmperorsChildren/react-native-scroll-bottom-sheet.git"
+  },
+  "author": "MasterSigmar (https://github.com/MasterSigmar)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rgommezz/react-native-scroll-bottom-sheet/issues"
+    "url": "https://github.com/EmperorsChildren/react-native-scroll-bottom-sheet/issues"
   },
-  "homepage": "https://github.com/rgommezz/react-native-scroll-bottom-sheet#readme",
+  "homepage": "https://github.com/EmperorsChildren/react-native-scroll-bottom-sheet#readme",
   "peerDependencies": {
     "react": "*",
-    "react-native": "*",
-    "react-native-gesture-handler": "*",
-    "react-native-reanimated": "*"
+    "react-native": "<0.75.0",
+    "react-native-gesture-handler": ">=2.0.0",
+    "react-native-reanimated": ">=2.0.0"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^8.3.4",
-    "@react-native-community/bob": "^0.10.1",
-    "@react-native-community/eslint-config": "^0.0.7",
-    "@release-it/conventional-changelog": "^1.1.0",
-    "@types/jest": "^25.1.2",
-    "@types/react": "^16.9.19",
-    "@types/react-native": "0.61.10",
-    "commitlint": "^8.3.4",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-header": "^3.0.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.0.1",
-    "jest": "^25.1.0",
-    "prettier": "^2.0.5",
-    "react": "~16.9.0",
-    "react-native": "^0.62.2",
-    "react-native-gesture-handler": "^1.6.1",
-    "react-native-reanimated": "^1.8.0",
-    "release-it": "^12.6.3",
-    "typescript": "^3.7.5"
+    "@commitlint/config-conventional": "^19.5.0",
+    "@react-native-community/bob": "^0.17.1",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@release-it/conventional-changelog": "^8.0.2",
+    "@types/babel__core": "^7",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.2.6",
+    "@types/react-native": "^0.73.0",
+    "commitlint": "^19.5.0",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-header": "^3.1.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3",
+    "react": "18.2.0",
+    "react-native": "0.74.5",
+    "react-native-gesture-handler": "~2.16.1",
+    "react-native-reanimated": "^2",
+    "release-it": "^17.6.0",
+    "typescript": "~5.1.0"
   },
   "jest": {
     "preset": "react-native",
@@ -91,7 +95,7 @@
         "block",
         [
           "*",
-          " * Copyright (c) 2020 Raul Gomez Acuna",
+          " * Copyright (c) 2024 MasterSigmar",
           " *",
           " * This source code is licensed under the MIT license found in the",
           " * LICENSE file in the root directory of this source tree.",
@@ -123,6 +127,9 @@
     "trailingComma": "es5",
     "useTabs": false
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "release-it": {
     "git": {
       "commitMessage": "chore: release %s",
@@ -150,6 +157,9 @@
     ]
   },
   "dependencies": {
+    "@babel/core": "^7.25.2",
+    "metro-react-native-babel-preset": "^0.77.0",
     "utility-types": "^3.10.0"
-  }
+  },
+  "packageManager": "yarn@4.4.1"
 }
