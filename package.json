@@ -15,7 +15,7 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "prepare": "bob build",
-    "release": "release-it --no-increment",
+    "release": "release-it",
     "example": "yarn --cwd example"
   },
   "keywords": [
