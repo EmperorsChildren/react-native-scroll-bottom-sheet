@@ -37,9 +37,9 @@
   "homepage": "https://github.com/EmperorsChildren/react-native-scroll-bottom-sheet#readme",
   "peerDependencies": {
     "react": "*",
-    "react-native": "*",
-    "react-native-gesture-handler": "*",
-    "react-native-reanimated": "*"
+    "react-native": "<0.75.0",
+    "react-native-gesture-handler": ">=2.0.0",
+    "react-native-reanimated": ">=2.0.0"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.5.0",
