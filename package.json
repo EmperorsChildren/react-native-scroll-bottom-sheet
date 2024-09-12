@@ -15,7 +15,7 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "prepare": "bob build",
-    "release": "release-it",
+    "release": "release-it --no-increment",
     "example": "yarn --cwd example"
   },
   "keywords": [
@@ -127,14 +127,16 @@
     "trailingComma": "es5",
     "useTabs": false
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "release-it": {
     "git": {
       "commitMessage": "chore: release %s",
       "tagName": "v%s"
     },
     "npm": {
-      "publish": true,
-      "access": "public"
+      "publish": true
     },
     "github": {
       "release": true
