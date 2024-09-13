@@ -35,12 +35,13 @@ lib/
 !.yarn/versions
 !yarn.lock
 
+
 # yarn
-./example/.pnp.*
-../example/yarn/*
-!./example/.yarn/patches
-!./example/.yarn/plugins
-!./example/.yarn/releases
-!./example/.yarn/sdks
-!./example/.yarn/versions
-!./example/yarn.lock
+example/.pnp.*
+example/.yarn/*
+!example/.yarn/patches
+!example/.yarn/plugins
+!example/.yarn/releases
+!example/.yarn/sdks
+!example/.yarn/versions
+!example/yarn.lock
