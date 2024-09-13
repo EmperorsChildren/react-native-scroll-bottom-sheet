@@ -617,7 +617,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-arrow-functions@npm:^7.0.0, @babel/plugin-transform-arrow-functions@npm:^7.0.0-0":
+"@babel/plugin-transform-arrow-functions@npm:^7.0.0":
   version: 7.24.7
   resolution: "@babel/plugin-transform-arrow-functions@npm:7.24.7"
   dependencies:
@@ -764,15 +764,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-nullish-coalescing-operator@npm:^7.0.0-0":
+"@babel/plugin-transform-object-assign@npm:^7.16.7":
   version: 7.24.7
-  resolution: "@babel/plugin-transform-nullish-coalescing-operator@npm:7.24.7"
+  resolution: "@babel/plugin-transform-object-assign@npm:7.24.7"
   dependencies:
     "@babel/helper-plugin-utils": "npm:^7.24.7"
-    "@babel/plugin-syntax-nullish-coalescing-operator": "npm:^7.8.3"
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: 10c0/7243c8ff734ed5ef759dd8768773c4b443c12e792727e759a1aec2c7fa2bfdd24f1ecb42e292a7b3d8bd3d7f7b861cf256a8eb4ba144fc9cc463892c303083d9
+  checksum: 10c0/11725c2f91bee7007a76fb6525d2b8a8883e15a25f49295ccc680bbf6857f36d49e8fb5e2a1ff46e0386b74442377ff81bbe946ba5230ed4482c57e56b7e81a7
   languageName: node
   linkType: hard
 
@@ -787,19 +786,6 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: 10c0/9ad64bc003f583030f9da50614b485852f8edac93f8faf5d1cd855201a4852f37c5255ae4daf70dd4375bdd4874e16e39b91f680d4668ec219ba05441ce286eb
-  languageName: node
-  linkType: hard
-
-"@babel/plugin-transform-optional-chaining@npm:^7.0.0-0":
-  version: 7.24.8
-  resolution: "@babel/plugin-transform-optional-chaining@npm:7.24.8"
-  dependencies:
-    "@babel/helper-plugin-utils": "npm:^7.24.8"
-    "@babel/helper-skip-transparent-expression-wrappers": "npm:^7.24.7"
-    "@babel/plugin-syntax-optional-chaining": "npm:^7.8.3"
-  peerDependencies:
-    "@babel/core": ^7.0.0-0
-  checksum: 10c0/4ffbe1aad7dec7c9aa2bf6ceb4b2f91f96815b2784f2879bde80e46934f59d64a12cb2c6262e40897c4754d77d2c35d8a5cfed63044fdebf94978b1ed3d14b17
   languageName: node
   linkType: hard
 
@@ -927,7 +913,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-shorthand-properties@npm:^7.0.0, @babel/plugin-transform-shorthand-properties@npm:^7.0.0-0":
+"@babel/plugin-transform-shorthand-properties@npm:^7.0.0":
   version: 7.24.7
   resolution: "@babel/plugin-transform-shorthand-properties@npm:7.24.7"
   dependencies:
@@ -958,17 +944,6 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: 10c0/5a74ed2ed0a3ab51c3d15fcaf09d9e2fe915823535c7a4d7b019813177d559b69677090e189ec3d5d08b619483eb5ad371fbcfbbff5ace2a76ba33ee566a1109
-  languageName: node
-  linkType: hard
-
-"@babel/plugin-transform-template-literals@npm:^7.0.0-0":
-  version: 7.24.7
-  resolution: "@babel/plugin-transform-template-literals@npm:7.24.7"
-  dependencies:
-    "@babel/helper-plugin-utils": "npm:^7.24.7"
-  peerDependencies:
-    "@babel/core": ^7.0.0-0
-  checksum: 10c0/3630f966257bcace122f04d3157416a09d40768c44c3a800855da81146b009187daa21859d1c3b7d13f4e19e8888e60613964b175b2275d451200fb6d8d6cfe6
   languageName: node
   linkType: hard
 
@@ -5870,6 +5845,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.isequal@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "lodash.isequal@npm:4.5.0"
+  checksum: 10c0/dfdb2356db19631a4b445d5f37868a095e2402292d59539a987f134a8778c62a2810c2452d11ae9e6dcac71fc9de40a6fedcb20e2952a15b431ad8b29e50e28f
+  languageName: node
+  linkType: hard
+
 "lodash.throttle@npm:^4.1.1":
   version: 4.1.1
   resolution: "lodash.throttle@npm:4.1.1"
@@ -7514,23 +7496,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-reanimated@npm:~3.10.1":
-  version: 3.10.1
-  resolution: "react-native-reanimated@npm:3.10.1"
+"react-native-reanimated@npm:^2.8.0":
+  version: 2.17.0
+  resolution: "react-native-reanimated@npm:2.17.0"
   dependencies:
-    "@babel/plugin-transform-arrow-functions": "npm:^7.0.0-0"
-    "@babel/plugin-transform-nullish-coalescing-operator": "npm:^7.0.0-0"
-    "@babel/plugin-transform-optional-chaining": "npm:^7.0.0-0"
-    "@babel/plugin-transform-shorthand-properties": "npm:^7.0.0-0"
-    "@babel/plugin-transform-template-literals": "npm:^7.0.0-0"
+    "@babel/plugin-transform-object-assign": "npm:^7.16.7"
     "@babel/preset-typescript": "npm:^7.16.7"
-    convert-source-map: "npm:^2.0.0"
     invariant: "npm:^2.2.4"
+    lodash.isequal: "npm:^4.5.0"
+    setimmediate: "npm:^1.0.5"
+    string-hash-64: "npm:^1.0.3"
   peerDependencies:
     "@babel/core": ^7.0.0-0
     react: "*"
     react-native: "*"
-  checksum: 10c0/0154123649214bd8a83710056594590d9b5f073c5f8911f5b59a0a4f5dcca671d98b475bc4f3bb106b6c8b5c3dcb645a4973efdbe8dbd997bfae2797bd83f546
+  checksum: 10c0/25ae0ed7f0f984558a2e89c5d78f9172e10a4a88467158bdb721919c0c438ef0fa13a04a9c3ffd853e1ab481eac0161c4352ca1cd7c76aa5f0c82f17573c311b
   languageName: node
   linkType: hard
 
@@ -7974,7 +7954,7 @@ __metadata:
     react-native-gesture-handler: "npm:~2.16.1"
     react-native-maps: "npm:1.14.0"
     react-native-paper: "npm:^5.12.5"
-    react-native-reanimated: "npm:~3.10.1"
+    react-native-reanimated: "npm:^2.8.0"
     react-native-safe-area-context: "npm:4.10.5"
     react-native-screens: "npm:3.31.1"
     react-native-vector-icons: "npm:^10.1.0"
@@ -8487,6 +8467,13 @@ __metadata:
   version: 2.0.0
   resolution: "strict-uri-encode@npm:2.0.0"
   checksum: 10c0/010cbc78da0e2cf833b0f5dc769e21ae74cdc5d5f5bd555f14a4a4876c8ad2c85ab8b5bdf9a722dc71a11dcd3184085e1c3c0bd50ec6bb85fffc0f28cf82597d
+  languageName: node
+  linkType: hard
+
+"string-hash-64@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "string-hash-64@npm:1.0.3"
+  checksum: 10c0/ac175f71b383af1487ab16b4cc1b42b5302bea08bdf1cc1ea04bacb293fb9b35afc6c58260e1fc728627e7265519da01976822a188d493d7e7625b9628173ea3
   languageName: node
   linkType: hard
 

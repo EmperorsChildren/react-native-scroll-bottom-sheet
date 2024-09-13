@@ -122,9 +122,9 @@ const SectionListExample: React.FC<Props> = () => {
         animatedPosition={animatedPosition.current}
         snapPoints={snapPointsFromTop}
         initialSnapIndex={1}
-        animationConfig={{
-          easing: Easing.inOut(Easing.linear),
-        }}
+        // animationConfig={{
+        //   easing: Easing.inOut(Easing.linear),
+        // }}
         renderHandle={() => (
           <Handle style={{ paddingVertical: 20, backgroundColor: '#F3F4F9' }}>
             <Animated.View
