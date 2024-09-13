@@ -18,9 +18,10 @@ import { createMockData, ListItemData } from '../utils';
 import Handle from '../components/Handle';
 import Transaction from '../components/Transaction';
 import Animated, {
-  Easing,
-  Extrapolation as Extrapolate,
-  interpolate,
+  EasingNode as Easing,
+  Extrapolate,
+  Value,
+  interpolateNode as interpolate,
 } from 'react-native-reanimated';
 
 interface Props {
@@ -35,31 +36,28 @@ const sections = createMockData();
 
 const SectionListExample: React.FC<Props> = () => {
   const snapPointsFromTop = [96, '45%', windowHeight - 264];
-  const animatedPosition = React.useRef(0.5);
+  const animatedPosition = React.useRef(new Value(0.5));
   const handleLeftRotate = [
-    interpolate(
-      animatedPosition.current,
-      [0, 0.4, 1],
-      [25, 0, 0],
-      Extrapolate.CLAMP
-    ),
+    interpolate(animatedPosition.current, {
+      inputRange: [0, 0.4, 1],
+      outputRange: [25, 0, 0],
+      extrapolate: Extrapolate.CLAMP,
+    }),
     'deg',
   ];
   const handleRightRotate = [
-    interpolate(
-      animatedPosition.current,
-      [0, 0.4, 1],
-      [-25, 0, 0],
-      Extrapolate.CLAMP
-    ),
+    interpolate(animatedPosition.current, {
+      inputRange: [0, 0.4, 1],
+      outputRange: [-25, 0, 0],
+      extrapolate: Extrapolate.CLAMP,
+    }),
     'deg',
   ];
-  const cardScale = interpolate(
-    animatedPosition.current,
-    [0, 0.6, 1],
-    [1, 1, 0.9],
-    Extrapolate.CLAMP
-  );
+  const cardScale = interpolate(animatedPosition.current, {
+    inputRange: [0, 0.6, 1],
+    outputRange: [1, 1, 0.9],
+    extrapolate: Extrapolate.CLAMP,
+  });
 
   const renderSectionHeader = React.useCallback(
     ({ section }: any) => (
@@ -88,7 +86,7 @@ const SectionListExample: React.FC<Props> = () => {
       />
       <Animated.Image
         source={require('../assets/card-front.png')}
-        style={[styles.card, { transform: [{ scale: cardScale }] }]}
+        style={[styles.card /*{ transform: [{ scale: cardScale }] }*/]}
       />
       <View style={styles.row}>
         <View>
@@ -133,7 +131,7 @@ const SectionListExample: React.FC<Props> = () => {
               style={[
                 styles.handle,
                 {
-                  // left: windowWidth / 2 - 20,
+                  left: windowWidth / 2 - 20,
                   // transform: [{ rotate: handleLeftRotate }],
                 },
               ]}
@@ -142,7 +140,7 @@ const SectionListExample: React.FC<Props> = () => {
               style={[
                 styles.handle,
                 {
-                  // right: windowWidth / 2 - 20,
+                  right: windowWidth / 2 - 20,
                   // transform: [{ rotate: handleRightRotate }],
                 },
               ]}

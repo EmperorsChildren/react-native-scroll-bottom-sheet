@@ -14,8 +14,9 @@ import ScrollBottomSheet from '@emperorschildren/react-native-scroll-bottom-shee
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import MapView from 'react-native-maps';
 import Animated, {
-  Extrapolation as Extrapolate,
-  interpolate,
+  Extrapolate,
+  interpolateNode as interpolate,
+  Value,
 } from 'react-native-reanimated';
 import Handle from '../components/Handle';
 import Carousel from '../components/Carousel';
@@ -40,13 +41,12 @@ const snapPointsFromTop = [96, '50%', windowHeight - 128];
 const HorizontalFlatListExample: React.FC<Props> = ({ navigation }) => {
   const bottomSheetRef = React.useRef<ScrollBottomSheet<any> | null>(null);
 
-  const animatedPosition = React.useRef(0);
-  const opacity = interpolate(
-    animatedPosition.current,
-    [0, 1],
-    [0, 0.75],
-    Extrapolate.CLAMP
-  );
+  const animatedPosition = React.useRef(new Value(0));
+  const opacity = interpolate(animatedPosition.current, {
+    inputRange: [0, 1],
+    outputRange: [0, 0.75],
+    extrapolate: Extrapolate.CLAMP,
+  });
 
   const renderRow = React.useCallback(
     ({ index }: any) => <Carousel index={index} />,
